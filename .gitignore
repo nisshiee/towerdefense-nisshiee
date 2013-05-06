@@ -1,3 +1,8 @@
+/runner/src/main/resources/building
+/runner/src/main/resources/enemy
+/runner/src/main/resources/geographicalFeatures
+/runner/src/main/resources/lucentTexture
+
 # use glob syntax.
 syntax: glob
 *.ser
