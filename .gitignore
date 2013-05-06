@@ -1,0 +1,44 @@
+/runner/src/main/resources/building
+/runner/src/main/resources/enemy
+/runner/src/main/resources/geographicalFeatures
+/runner/src/main/resources/lucentTexture
+
+# use glob syntax.
+syntax: glob
+*.ser
+*.class
+*~
+*.bak
+#*.off
+*.old
+
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+.scala_dependencies
+.cache
+
+# idea
+.idea
+*.iml
+
+# ensime
+.ensime*
+
+# sbt building
+target/
+project/boot/
+
+# other scm
+.svn
+.CVS
+.hg*
+
+# ctags
+TAGS
+
+# switch to regexp syntax.
+#  syntax: regexp
+#  ^\.pc/
