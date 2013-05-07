@@ -22,7 +22,7 @@ object Labyrinth {
       case None => None
       case Some(Goal) => Some(l.copy(route = c :: l.route))
       case _ =>
-        c.neighbors.toStream filter notfixed(l) map { next =>
+        c.farNeighbors(f.goal).toStream filter notfixed(l) map { next =>
           val walls = c.neighbors filter { p =>
             p != next && p.isIn(f) && notfixed(l)(p)
           }
