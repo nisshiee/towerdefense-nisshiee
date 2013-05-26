@@ -21,14 +21,22 @@ object Labyrinth {
     f.tile(c) match {
       case None => None
       case Some(Goal) => Some(l.copy(route = c :: l.route))
-      case _ =>
-        c.neighbors.toStream filter notfixed(l) map { next =>
-          val walls = c.neighbors filter { p =>
+      case _ => {
+        val cluster = Cluster(c)
+        val goal = f.goal
+        val candidates =
+          cluster.surround filter notfixed(l) sortBy (goal <>) reverse
+
+        candidates.toStream map { next =>
+          val walls = candidates filter { p =>
             p != next && p.isIn(f) && notfixed(l)(p)
           }
           if (walls forall buildable)
             longestrec (
-               RLabyrinth(c :: l.route, walls ++ l.wall)
+               RLabyrinth (
+                  (next :: (cluster.points filter { p => p != next && p != c })) ++ (c :: l.route)
+                 ,walls ++ l.wall
+               )
               ,next
             )
           else
@@ -36,7 +44,9 @@ object Labyrinth {
         } collectFirst {
           case Some(l) => l
         }
+      }
     }
+
 
   def notfixed(l: RLabyrinth)(p: Point) =
     !l.route.contains(p) && !l.wall.contains(p)

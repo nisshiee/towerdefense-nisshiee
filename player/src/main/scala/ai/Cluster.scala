@@ -23,9 +23,11 @@ object Cluster {
 
   implicit class RichCluster(val underlying: Cluster) extends AnyVal {
 
-    def surround(implicit f: Field): List[Point] =
-      underlying.points.toSet flatMap { p: Point =>
+    def surround(implicit f: Field): List[Point] = {
+      val ps = underlying.points.toSet
+      ps flatMap { p: Point =>
         p.neighbors.toSet
-      } filter (_.isIn(f)) toList
+      } filter (_.isIn(f)) filterNot (ps contains _) toList
+    }
   }
 }
