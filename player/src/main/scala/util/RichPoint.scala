@@ -17,4 +17,7 @@ class RichPoint(val underlying: Point) extends AnyVal {
     ,underlying + (0, 1)
     ,underlying + (1, 0)
   )
+
+  def <>(p: Point) =
+    (underlying.x - p.x) * (underlying.x - p.x) + (underlying.y - p.y) * (underlying.y - p.y)
 }
