@@ -6,4 +6,5 @@ trait RichConversions {
 
   implicit def toRichPoint(p: Point) = new RichPoint(p)
   implicit def toRichField(f: Field) = new RichField(f)
+  implicit def toRichLabyrinth(l: Labyrinth) = new RichLabyrinth(l)
 }
