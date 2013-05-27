@@ -12,7 +12,7 @@ resolvers += "Towerdefense Repo" at "http://towerdefense-repo.herokuapp.com/"
 
 libraryDependencies ++= Seq(
    "jp.ac.nagoya-u.itc.mase" % "tower-defense" % "1.3.0"
-  ,"org.nisshiee" %% "towerdefense-scala" % "1.0.1"
+  ,"org.nisshiee" %% "towerdefense-scala" % "1.0.2"
   // "org.scalaz" %% "scalaz-core" % "7.0.0-RC2"
   //,"com.typesafe.akka" %% "akka-actor" % "2.1.2"
   //typesafe config includes in akka dependencies
