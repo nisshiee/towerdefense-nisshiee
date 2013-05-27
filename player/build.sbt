@@ -4,7 +4,7 @@ name := "towerdefense-nisshiee"
 
 organization := "org.nisshiee"
 
-version := "1.0.0-SNAPSHOT"
+version := "1.0.0"
 
 scalaVersion := "2.10.1"
 
@@ -13,12 +13,7 @@ resolvers += "Towerdefense Repo" at "http://towerdefense-repo.herokuapp.com/"
 libraryDependencies ++= Seq(
    "jp.ac.nagoya-u.itc.mase" % "tower-defense" % "1.3.0"
   ,"org.nisshiee" %% "towerdefense-scala" % "1.0.2"
-  // "org.scalaz" %% "scalaz-core" % "7.0.0-RC2"
-  //,"com.typesafe.akka" %% "akka-actor" % "2.1.2"
-  //typesafe config includes in akka dependencies
-  //,"com.typesafe" % "config" % "1.0.0"
   ,"org.specs2" %% "specs2" % "1.14" % "test"
-  //,"org.typelevel" %% "scalaz-specs2" % "0.1.3" % "test"
   ,"org.mockito" % "mockito-all" % "1.9.5" % "test"
   ,"junit" % "junit" % "4.11" % "test"
   ,"org.pegdown" % "pegdown" % "1.2.1" % "test"
